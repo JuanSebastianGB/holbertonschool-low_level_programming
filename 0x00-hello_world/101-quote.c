@@ -3,7 +3,7 @@
 
 /**
  * main - Entry point
- * Description. This prints Dora's q
+ * Description: This prints Dora's q
  * Return: Always 1 (Success)
  */
 int main(void)
