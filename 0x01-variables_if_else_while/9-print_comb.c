@@ -12,7 +12,7 @@
 int main(void)
 {
 
-char aux2;
+int aux2;
 
 for (aux2 = 48; aux2 <= 57; aux2++)
 {
