@@ -14,14 +14,17 @@ int main(void)
 
 char aux2;
 
-for (aux2 = 48; aux2 <= 56; aux2++)
+for (aux2 = 48; aux2 <= 57; aux2++)
 {
 putchar(aux2);
+if (aux2 != 57)
+{
+
 putchar(44);
 putchar(32);
 }
-putchar(57);
-putchar(36);
-putchar('\n');
+}
+
+putchar(10);
 return (0);
 }
