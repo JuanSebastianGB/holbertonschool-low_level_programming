@@ -17,11 +17,11 @@ char aux2;
 for (aux2 = 48; aux2 <= 56; aux2++)
 {
 putchar(aux2);
-putchar(',');
-putchar(' ');
+putchar(44);
+putchar(32);
 }
 putchar(57);
-putchar('$');
+putchar(36);
 putchar('\n');
 return (0);
 }
