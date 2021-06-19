@@ -25,7 +25,7 @@ for (j = z ; j <= 56; j++)
 { /*Start of j for*/
 for (k = y; k <= 57; k++)
 { /*star of k for*/
-if (i != j && i != k && j != k)
+if (i != j && i != k && j != k && j < k)
 {
 putchar(i);
 putchar(j);
