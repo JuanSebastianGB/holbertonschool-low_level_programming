@@ -25,13 +25,16 @@ for (j = z ; j <= 56; j++)
 { /*Start of j for*/
 for (k = y; k <= 57; k++)
 { /*star of k for*/
+if (i != j && i != k && j != k)
+{
 putchar(i);
 putchar(j);
 putchar(k);
-if (i != 55  &&  z != 56  && y != 57)
+if (i != 55  &&  z != 56  && y != 57) /*Avoid the 789 case for print . space */
 {
 putchar(44);
 putchar(32);
+}
 }
 } /*End of k for*/
 } /*End of j for*/
