@@ -17,8 +17,11 @@ for (y = 0; y <= 9; y++)
 xy = x * y; /* This is the pattern */
 if (xy < 10)
 {
+if(y != 0)
+{
 _putchar(' ');
-_putchar(' ');
+_putchar(' ');      
+}
 _putchar(xy + '0');
 if (y < 9)
 {
