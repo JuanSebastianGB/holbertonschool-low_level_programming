@@ -17,22 +17,22 @@ for (y = 0; y <= 9; y++)
 xy = x * y; /* This is the pattern */
 if (xy < 10)
 {
+_putchar(' ');
+_putchar(' ');
 _putchar(xy + '0');
 if (y < 9)
 {
 _putchar(',');
-_putchar(' ');
-_putchar(' ');
 }
 }
 else
 {
+_putchar(' ');
 _putchar(xy / 10 + '0'); /* result is int part (first digit) */
 _putchar(xy % 10 + '0'); /* result is second digit */
 if (y < 9)
 {
 _putchar(',');
-_putchar(' ');
 }
 }
 }
