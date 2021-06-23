@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -22,16 +23,12 @@ _putchar('0');
 else if (xy < 10)
 {
 _putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(' ');
+printf("   ");
 _putchar(xy + '0');
 }
 else if (xy >= 10 && xy <= 99)
 {
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
+printf(",  ");
 _putchar((xy / 10) + '0');
 _putchar((xy % 10) + '0');
 }
@@ -47,8 +44,9 @@ _putchar((xy % 10) + '0');
 _putchar('\n');
 }
 }
-else if(size == 0)
+else if (size == 0)
 {
 _putchar('0');
+_puchar('\n');
 }
 }
