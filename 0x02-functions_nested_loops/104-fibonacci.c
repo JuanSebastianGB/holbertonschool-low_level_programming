@@ -9,7 +9,7 @@
 int main(void)
 {
 unsigned long i = 0, j = 1, result, aux = 0;
-while (aux < 98)
+while (aux < 95)
 {
 result = i + j;
 printf("%li, ", result);
