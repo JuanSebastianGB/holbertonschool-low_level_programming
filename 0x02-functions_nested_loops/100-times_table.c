@@ -47,4 +47,8 @@ _putchar((xy % 10) + '0');
 _putchar('\n');
 }
 }
+else if(size == 0)
+{
+_putchar('0');
+}
 }
