@@ -11,7 +11,7 @@ void print_times_table(int size)
 {
 int y, x, xy;
 if (size < 15 && size > 0)
-{  
+{
 for (x = 0; x <= size; x++)
 {
 for (y = 0; y <= size; y++)
