@@ -8,7 +8,7 @@
 
 int main(void)
 {
-long int i = 0, j = 1, result, aux = 0;
+unsigned long i = 0, j = 1, result, aux = 0;
 while (aux < 98)
 {
 result = i + j;
