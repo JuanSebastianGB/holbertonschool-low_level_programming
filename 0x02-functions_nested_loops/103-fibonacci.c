@@ -9,7 +9,7 @@
 int main(void)
 {
 long int i = 0, j = 1, result, aux = 0, aux2 = 0;
-while (aux < 20)
+while (aux < 50)
 {
 result = i + j;
 if (result <= 4000000 && (result % 2) == 0)
