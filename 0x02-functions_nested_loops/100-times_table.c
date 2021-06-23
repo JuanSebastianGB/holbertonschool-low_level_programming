@@ -11,7 +11,7 @@
 void print_times_table(int size)
 {
 int y, x, xy;
-if (size < 15 && size > 0)
+if (size < 15 && size >= 0)
 {
 for (x = 0; x <= size; x++)
 {
@@ -23,12 +23,16 @@ _putchar('0');
 else if (xy < 10)
 {
 _putchar(',');
-printf("   ");
+_putchar(' ');
+_putchar(' ');
+_putchar(' ');
 _putchar(xy + '0');
 }
 else if (xy >= 10 && xy <= 99)
 {
-printf(",  ");
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
 _putchar((xy / 10) + '0');
 _putchar((xy % 10) + '0');
 }
@@ -43,10 +47,5 @@ _putchar((xy % 10) + '0');
 }
 _putchar('\n');
 }
-}
-else if (size == 0)
-{
-_putchar('0');
-_putchar('\n');
 }
 }
