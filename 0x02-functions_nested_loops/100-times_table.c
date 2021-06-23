@@ -47,6 +47,6 @@ _putchar('\n');
 else if (size == 0)
 {
 _putchar('0');
-_puchar('\n');
+_putchar('\n');
 }
 }
