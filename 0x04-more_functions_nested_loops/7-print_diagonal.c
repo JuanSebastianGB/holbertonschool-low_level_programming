@@ -26,7 +26,7 @@ if (i == j)
 {
 _putchar(92);
 }
-else
+ else if (i > j)
 {
 _putchar(32);
 }
