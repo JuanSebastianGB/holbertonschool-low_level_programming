@@ -11,38 +11,31 @@
 
 void print_number(int n)
 {
-int count = 0, aux = n;
-while (aux != 0)
-{
-aux = aux / 10;
-count++;
-}
+char ch;
+int val;
+char ch2;
+
 if (n < 0)
 {
 _putchar('-');
-_putchar(-(n / 10) + '0');
-_putchar(-(n % 10) + '0');
-}
-if (count == 2 && n > 0)
+ch = ('0' - (n % 10));
+n /= -10;
+} else
 {
-_putchar((n / 10) + '0');
-_putchar((n % 10) + '0');
+ch = ((n % 10) + '0');
+n /= 10;
 }
-if (count == 3 && n > 0)
+val = 0;
+while (n > 0)
 {
-_putchar((n / 100) + '0');
-_putchar((n / 100) % 10 + '0');
-_putchar((n % 10) + '0');
+val = val * 10 + (n % 10);
+n /= 10;
 }
-if (count == 4 && n > 0)
+while (val > 0)
 {
-_putchar((n / 1000) + '0');
-_putchar((n / 100) % 10 + '0');
-_putchar((n / 10) % 10 + '0');
-_putchar(n % 10 + '0');
+ch2 = ((val % 10) + '0');
+_putchar (ch2);
+val /= 10;
 }
-if (n == 0)
-{
-_putchar(0 + '0');
-}
+_putchar(ch);
 }
