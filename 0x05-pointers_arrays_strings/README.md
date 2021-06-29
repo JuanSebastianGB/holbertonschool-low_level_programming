@@ -31,6 +31,7 @@
 2. [This report, by its very length, defends itself against the risk of being read](2-strlen.c) - Write a function that returns the length of a string.
 3. [I do not fear computers. I fear the lack of them](3-puts.c). - Write a function that prints a string, followed by a new line, to stdout.
 4. [I can only go one way. I've not got a reverse gear](4-print_rev.c) - Write a function that prints a string, in reverse, followed by a new line.
+5. [A good engineer thinks in reverse and asks himself about the stylistic consequences of the components and systems he proposes](5-rev_string.c) - Write a function that reverses a string.
 
 ### Resources
 
