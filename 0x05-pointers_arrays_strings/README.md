@@ -46,7 +46,7 @@ You are allowed to use printf
 
 # Advanced tasks
 
-[101-keygen.c](101-keygen.c) - function that can be used for decoding , hacking and actually open the [101-crackme](101-crackme file)
+[101-keygen.c](101-keygen.c) - function that can be used for decoding , hacking and actually open the [101-crackme](101-crackme) file
 
 ### Resources
 
