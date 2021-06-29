@@ -42,7 +42,7 @@ Numbers must be separated by comma, followed by a space
 The numbers should be displayed in the same order as they are stored in the array
 You are allowed to use printf
 ```
-
+[9-strcpy.c](9-strcpy.c) - function that copies the string pointed by src to the buffer pointed by dest.
 
 ### Resources
 
