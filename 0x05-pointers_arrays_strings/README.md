@@ -30,6 +30,8 @@
 1. [Don't swap horses in crossing a stream](1-swap.c). - Write a function that swaps the values of two integers.
 2. [This report, by its very length, defends itself against the risk of being read](2-strlen.c) - Write a function that returns the length of a string.
 3. [I do not fear computers. I fear the lack of them](3-puts.c). - Write a function that prints a string, followed by a new line, to stdout.
+4. [I can only go one way. I've not got a reverse gear](4-print_rev.c) - Write a function that prints a string, in reverse, followed by a new line.
+
 ### Resources
 
 1. [C - Arrays](https://www.tutorialspoint.com/cprogramming/c_arrays.htm)
