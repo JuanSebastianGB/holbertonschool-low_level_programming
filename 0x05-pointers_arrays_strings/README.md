@@ -44,6 +44,10 @@ You are allowed to use printf
 ```
 [9-strcpy.c](9-strcpy.c) - function that copies the string pointed by src to the buffer pointed by dest.
 
+# Advanced tasks
+
+[101-keygen.c](101-keygen.c) - function that can be used for decoding , hacking and actually open the [101-crackme](101-crackme file)
+
 ### Resources
 
 1. [C - Arrays](https://www.tutorialspoint.com/cprogramming/c_arrays.htm)
