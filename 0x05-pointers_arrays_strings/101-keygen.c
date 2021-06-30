@@ -20,10 +20,8 @@ int main(void)
 		/* pass[i] = min + rand() % 94;*/
 		pass[i] = (rand() % (max - min)) + min;
 		checksum += pass[i++];
-
 	}
 	pass[i] = '\0';
-
 	if (checksum != limit)
 	{
 		diff = checksum - limit;
@@ -32,32 +30,27 @@ int main(void)
 		/* run at this size the times needed */
 		if ((checksum - limit) % 2 != 0)
 			m1 = m1 + 1;
-
 		i = 0;
 		while (pass[i])
 		{
-			if(pass[i] - m1 >= min) /* guarantee subs >= 33 */
+			if (pass[i] - m1 >= min) /* guarantee subs >= 33 */
 			{
 				pass[i] = pass[i] - m1;
 				break; /* need to restart again in any case  */
 			}
-
 			i++;
 		}
-
 		i = 0;
 		while (pass[i])
 		{
-			if(pass[i] - m2 >= min) /* guarantee subs >= 33 */
+			if (pass[i] - m2 >= min) /* guarantee subs >= 33 */
 			{
 				pass[i] = pass[i] - m2;
 				break;
 			}
-
 			i++;
 		}
 	}
-
 		printf("%s", pass);
 
 	return (0);
