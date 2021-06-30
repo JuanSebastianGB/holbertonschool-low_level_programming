@@ -14,7 +14,6 @@ int main(void)
 	int min = 33, max = 122; /* ! --> z (char inside password) */
 
 	srand(time(0)); /*Set the seed for random number generation */
-	checksum = 0;
 	while (checksum < limit) /* limit is 0xad4 verif. using r2*/
 	{
 		pass[i] = (rand() % (max - min)) + min;
@@ -24,8 +23,7 @@ int main(void)
 	if (checksum != limit)
 	{
 		diff = checksum - limit;
-		m1 = diff / 2; /* run at this size the times needed */
-		m2 = diff / 2; /* split at half in case is < min */
+		m1 = m2 = diff / 2; /* run at this size the times needed */
 		if ((checksum - limit) % 2 != 0)
 			m1 = m1 + 1;
 		i = 0;
