@@ -37,10 +37,10 @@
 - [8-print_array.c](8-print_array.c) - function that prints n elements of an array of integers, followed by a new line.
 - [9-strcpy.c](9-strcpy.c) - function that copies the string pointed by src to the buffer pointed by dest.
 
-# Advanced tasks
+### Advanced tasks
 
-[100-atoi.c](100-atoi.c) - function that convert a string to an integer.
-[101-keygen.c](101-keygen.c) - function that can be used for decoding , hacking and actually open the [101-crackme](101-crackme) file
+- [100-atoi.c](100-atoi.c) - function that convert a string to an integer.
+- [101-keygen.c](101-keygen.c) - function that can be used for decoding , hacking and actually open the [101-crackme](101-crackme) file
 
 ### Resources
 
