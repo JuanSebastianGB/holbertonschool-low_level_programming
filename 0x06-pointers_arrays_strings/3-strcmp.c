@@ -4,7 +4,7 @@
  * *_strcmp - compare two strings
  *@s1: pointer 1
  *@s2: pointer 2
- *Return: A pointer
+ *Return: An integer + - or 0
  */
 
 int _strcmp(char *s1, char *s2)
