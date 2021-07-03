@@ -15,7 +15,7 @@ char *leet(char *n)
 	char aux1[] = "aeotlAEOTL";
 	char aux2[] = "4307143071";
 
-	while (*(n +i))
+	while (*(n + i))
 	{
 		for (j = 0; j < (int)(sizeof(aux1) / sizeof(char)); j++)
 		{
