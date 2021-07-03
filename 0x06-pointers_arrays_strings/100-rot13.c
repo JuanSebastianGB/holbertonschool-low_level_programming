@@ -27,6 +27,6 @@ char *rot13(char *n)
 		}
 		i++;
 	}
-	printf("\n %i", size);
+
 	return (n);
 }
