@@ -11,7 +11,7 @@
 
 void print_number(int n)
 {
-	int bu = n;
+ 	unsigned int bu = n;
 
 	if (n < 0)
 	{
