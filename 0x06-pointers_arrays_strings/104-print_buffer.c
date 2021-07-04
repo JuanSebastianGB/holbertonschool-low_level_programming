@@ -1,6 +1,35 @@
 #include <stdio.h>
 #include "holberton.h"
 
+/**
+ * for_print - Function that prints the left or right side
+ *@i: Actual position in the buffer
+ *@b: pointed buffer
+ *@size: buffer size
+ * Return: print
+ */
+
+void for_print(int i, char *b, int size)
+{
+	int j;
+
+	for (j = 0; j < 10; j++)
+	{
+		if (i + 1 + j < size)
+		{
+			if ((j + 1) % 2 == 0)
+				printf("%02x ", *(b + i + 1 + j));
+			else
+				printf("%02x", *(b + i + 1 + j));
+		}
+		else
+		{
+			printf("  ");
+			if ((j + 1) % 2 == 0)
+				putchar(' ');
+		}
+	}
+}
 
 /**
  * print_buffer - Function that prints the pointed buffer
@@ -36,22 +65,8 @@ void print_buffer(char *b, int size)
 		if ((i + 1) % 10 == 0)
 		{
 			printf("\n%08x: ", i + 1);
-			for (j = 0; j < 10; j++)
-			{
-				if (i + 1 + j < size)
-				{
-					if ((j + 1) % 2 == 0)
-						printf("%02x ", *(b + i + 1 + j));
-					else
-						printf("%02x", *(b + i + 1 + j));
-				}
-				else
-				{
-					printf("  ");
-					if ((j + 1) % 2 == 0)
-						putchar(' ');
-				}
-			}
+			for_print(i, b, size);
+
 		}
 	}
 	putchar('\n');
