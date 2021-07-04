@@ -6,27 +6,40 @@
  *@i: Actual position in the buffer
  *@b: pointed buffer
  *@size: buffer size
+ *@option: integer 1 or 2 to select for case
  * Return: print
  */
 
-void for_print(int i, char *b, int size)
+void for_print(int i, char *b, int size, int option)
 {
 	int j;
-
-	for (j = 0; j < 10; j++)
+	if (option == 1)
 	{
-		if (i + 1 + j < size)
+		for (j = 0; j < 10 ; j++)
 		{
 			if ((j + 1) % 2 == 0)
-				printf("%02x ", *(b + i + 1 + j));
+				printf("%02x ", *(b + i + j));
 			else
-				printf("%02x", *(b + i + 1 + j));
+				printf("%02x", *(b + i + j));
 		}
-		else
+	}
+	if (option == 2)
+	{
+		for (j = 0; j < 10; j++)
 		{
-			printf("  ");
-			if ((j + 1) % 2 == 0)
-				putchar(' ');
+			if (i + 1 + j < size)
+			{
+				if ((j + 1) % 2 == 0)
+					printf("%02x ", *(b + i + 1 + j));
+				else
+					printf("%02x", *(b + i + 1 + j));
+			}
+			else
+			{
+				printf("  ");
+				if ((j + 1) % 2 == 0)
+					putchar(' ');
+			}
 		}
 	}
 }
@@ -40,20 +53,14 @@ void for_print(int i, char *b, int size)
 
 void print_buffer(char *b, int size)
 {
-	int i, j;
+	int i;
 
 	for (i = 0; i <= size; i++)
 	{
 		if (i == 0)
 		{
 			printf("%08x: ", i);
-			for (j = 0; j < 10 ; j++)
-			{
-				if ((j + 1) % 2 == 0)
-					printf("%02x ", *(b + i + j));
-				else
-					printf("%02x", *(b + i + j));
-			}
+			for_print(i, b, size, 1);
 		}
 		if (*(b + i) <= 9)
 			putchar('.');
@@ -65,7 +72,7 @@ void print_buffer(char *b, int size)
 		if ((i + 1) % 10 == 0)
 		{
 			printf("\n%08x: ", i + 1);
-			for_print(i, b, size);
+			for_print(i, b, size, 2);
 
 		}
 	}
