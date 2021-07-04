@@ -56,26 +56,31 @@ void print_buffer(char *b, int size)
 {
 	int i;
 
-	for (i = 0; i <= size; i++)
+	if (size <= 0)
+		putchar('\n');
+	else
 	{
-		if (i == 0)
+		for (i = 0; i <= size; i++)
 		{
-			printf("%08x: ", i);
-			for_print(i, b, size, 1);
-		}
-		if (*(b + i) <= 9)
-			putchar('.');
-		else
-		{
-			if (*(b + i) != '\n')
-				putchar(*(b + i));
-		}
-		if ((i + 1) % 10 == 0)
-		{
-			printf("\n%08x: ", i + 1);
-			for_print(i, b, size, 2);
+			if (i == 0)
+			{
+				printf("%08x: ", i);
+				for_print(i, b, size, 1);
+			}
+			if (*(b + i) <= 9)
+				putchar('.');
+			else
+			{
+				if (*(b + i) != '\n')
+					putchar(*(b + i));
+			}
+			if ((i + 1) % 10 == 0)
+			{
+				printf("\n%08x: ", i + 1);
+				for_print(i, b, size, 2);
 
+			}
 		}
+		putchar('\n');
 	}
-	putchar('\n');
 }
