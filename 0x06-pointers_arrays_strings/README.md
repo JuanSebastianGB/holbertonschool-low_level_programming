@@ -17,3 +17,4 @@
 - [101-print_number.c](101-print_number.c) - function that prints an integer.
 - [102-magic.c](102-magic.c) - Added one line to this to the code, so that the program prints a[2] = 98, followed by a new line.
 - [103-infinite_add.c](103-infinite_add.c) - function that adds two numbers.
+- [104-print_buffer.c](104-print_buffer.c) - function that prints a buffer.
