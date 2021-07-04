@@ -71,8 +71,10 @@ void print_buffer(char *b, int size)
 				putchar('.');
 			else
 			{
-				if (*(b + i) != '\n')
+				if (*(b + i) != '\n' && i <= size && *(b + i) > 31 && *(b + i) < 127)
+				{
 					putchar(*(b + i));
+				}
 			}
 			if ((i + 1) % 10 == 0)
 			{
