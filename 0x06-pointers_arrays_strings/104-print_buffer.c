@@ -13,6 +13,7 @@
 void for_print(int i, char *b, int size, int option)
 {
 	int j;
+
 	if (option == 1)
 	{
 		for (j = 0; j < 10 ; j++)
