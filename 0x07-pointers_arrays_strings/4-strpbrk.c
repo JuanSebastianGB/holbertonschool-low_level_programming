@@ -6,7 +6,7 @@
  *@s: string in which we are going to look at
  *@accept: chart that content all the coincidences
  *
- *Return: int with the number of coincidences
+ *Return: string starting with the position of the first coincidence
  */
 
 char *_strpbrk(char *s, char *accept)
