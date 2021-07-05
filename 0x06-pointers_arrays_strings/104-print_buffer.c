@@ -2,85 +2,95 @@
 #include "holberton.h"
 
 /**
- * for_print - Function that prints the left or right side
- *@i: Actual position in the buffer
- *@b: pointed buffer
- *@size: buffer size
- *@option: integer 1 or 2 to select for case
- * Return: print
+ *part_hexa - function that prints the hexadecimal part with
+ *@k: The actual row
+ *Return: print
+ */
+void part_hexa(int k)
+{
+	printf("%08x: ", k);
+}
+
+/**
+ *part_hexax2 - function that prints the hexadecimal part in pair contents
+ *@size: size of buffer
+ *@b: buffer pointed
+ *@i: actual position in buffer
+ *Return: print
  */
 
-void for_print(int i, char *b, int size, int option)
+void part_hexax2(char *b, int size, int i)
 {
 	int j;
 
-	if (option == 1)
+	size = size + 0;
+	for (j = 0; j < 10; j++)
 	{
-		for (j = 0; j < 10 ; j++)
+		if ((i + j) < size)
 		{
+			printf("%02x", *(b + i + j));
 			if ((j + 1) % 2 == 0)
-				printf("%02x ", *(b + i + j));
-			else
-				printf("%02x", *(b + i + j));
+				putchar(' ');
 		}
-	}
-	if (option == 2)
-	{
-		for (j = 0; j < 10; j++)
+		else
 		{
-			if (i + 1 + j < size)
-			{
-				if ((j + 1) % 2 == 0)
-					printf("%02x ", *(b + i + 1 + j));
-				else
-					printf("%02x", *(b + i + 1 + j));
-			}
+			printf("  ");
+			if (j % 2 == 0)
+				putchar(' ');
+		}
+
+	}
+}
+
+/**
+ *part_char - function that prints the string part (3)
+ *@b: char pointed to print
+ *@i: actual position in buffer
+ *@size: size of buffer
+ *Return: print
+ */
+void part_char(char *b, int i, int size)
+{
+	int j;
+
+	size = size + 0;
+	for (j = 0; j < 10; j++)
+	{
+		if ((i + j) < size)
+		{
+			if (*(b + i + j) > 31 && *(b + i + j) < 127)
+				putchar(*(b + i + j));
 			else
-			{
-				printf("  ");
-				if ((j + 1) % 2 == 0)
-					putchar(' ');
-			}
+				putchar('.');
 		}
 	}
+	putchar('\n');
 }
 
 /**
  * print_buffer - Function that prints the pointed buffer
  *@b: Char pointed to print
  *@size: Length required to print
- *Return: printchar changed
+ *Return: print
  */
 
 void print_buffer(char *b, int size)
 {
-	int i;
+	int i, k = 0;
 
 	if (size <= 0)
-		putchar('\n');
+		putchar('\0');
 	else
 	{
-		for (i = 0; i <= size; i++)
+		for (i = 0; i < size; i++)
 		{
-			if (i == 0)
+			if (i % 10 == 0)
 			{
-				printf("%08x: ", i);
-				for_print(i, b, size, 1);
-			}
-			if (*(b + i) <= 9)
-				putchar('.');
-			else
-			{
-				if (*(b + i) != '\n' && i <= size && *(b + i) > 31 && *(b + i) < 127)
-					putchar(*(b + i));
-			}
-			if ((i + 1) % 10 == 0)
-			{
-				printf("\n%08x: ", i + 1);
-				for_print(i, b, size, 2);
-
+				part_hexa(k);
+				part_hexax2(b, size, i);
+				part_char(b, i, size);
+				k += 10;
 			}
 		}
-		putchar('\n');
 	}
 }
