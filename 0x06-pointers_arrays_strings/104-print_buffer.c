@@ -23,21 +23,14 @@ void part_hexax2(char *b, int size, int i)
 {
 	int j;
 
-	size = size + 0;
 	for (j = 0; j < 10; j++)
 	{
 		if ((i + j) < size)
-		{
 			printf("%02x", *(b + i + j));
-			if ((j + 1) % 2 == 0)
-				putchar(' ');
-		}
 		else
-		{
 			printf("  ");
-			if (j % 2 == 0)
-				putchar(' ');
-		}
+		if ((j + 1) % 2 == 0)
+			putchar(' ');
 
 	}
 }
@@ -53,7 +46,6 @@ void part_char(char *b, int i, int size)
 {
 	int j;
 
-	size = size + 0;
 	for (j = 0; j < 10; j++)
 	{
 		if ((i + j) < size)
