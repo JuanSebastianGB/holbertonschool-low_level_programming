@@ -25,5 +25,5 @@ char *_strchr(char *s, char c)
 	if (find > 0)
 		return (s + i);
 	else
-		return (NULL);
+		return (0);
 }
