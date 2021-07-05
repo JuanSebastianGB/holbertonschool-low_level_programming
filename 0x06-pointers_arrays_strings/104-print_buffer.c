@@ -71,7 +71,7 @@ void print_buffer(char *b, int size)
 	int i, k = 0;
 
 	if (size <= 0)
-		putchar('\0');
+		putchar('\n');
 	else
 	{
 		for (i = 0; i < size; i++)
