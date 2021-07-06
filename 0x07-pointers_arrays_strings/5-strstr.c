@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * *_strstr - finds the first occurrence of the substring needle in the string haystack
+ * *_strstr - finds the first occurrence of the substring s2 in the string s1
  *@s1: input string
  *@s2: input substring
  *
