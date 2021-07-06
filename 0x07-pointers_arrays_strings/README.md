@@ -17,6 +17,11 @@
 - [7-print_chessboard.c](7-print_chessboard.c) - function that prints the chessboard.
 - [8-print_diagsums.c](8-print_diagsums.c) - function that prints the sum of the two diagonals of a square matrix of integers.
 
+### Advanced tasks
+
+- [100-set_string.c](100-set_string.c) - function that sets the value of a pointer to a char.
+- [101-crackme_password](101-crackme_password) - file that contains the password for the [crackme2](crackme2) executable.
+
 ### Resources
 
 - [C - Pointer to Pointer](https://www.tutorialspoint.com/cprogramming/c_pointer_to_pointer.htm)
@@ -24,11 +29,6 @@
 - [Multi-dimensional Arrays in C](https://www.tutorialspoint.com/cprogramming/c_multi_dimensional_arrays.htm)
 - [Two dimensional (2D) arrays in C programming with example](https://beginnersbook.com/2014/01/2d-arrays-in-c-example/)
 - [How to hack crackme2](https://hybridivy.wordpress.com/2016/04/04/dont-hate-the-hacker-hate-the-code-part-3/) 
-
-### Advanced tasks
-
-- [100-set_string.c](100-set_string.c) - function that sets the value of a pointer to a char.
-- [101-crackme_password](101-crackme_password) - file that contains the password for the [crackme2](crackme2) executable.
 
 ### Steps for the crack
 
