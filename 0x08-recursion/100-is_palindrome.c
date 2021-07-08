@@ -17,20 +17,22 @@ int _strlen_recursion(char *s)
 /**
  * verif - returns 1 if reach 2 same chars 0 otherwise.
  *@s: char to verify
- *@length: Length of char
+ *@l: Length of char
  *@start: point of start of checking
  *Return: 1  or 0.
-  -empty string is palindrome
- */
+*/
 
 int verif(char *s, int l, int start)
 {
 
-	if (s[start] == s[l / 2])
-		return (0);
+	if (s[start] == s[l / 2]) /* Break condition work for pair an not pair*/
+		return (1);
+
 	if (s[start] == s[l - 1 - start])
 		return (verif(s, l, start + 1));
+
 	return (0);
+
 }
 
 /**
@@ -38,12 +40,9 @@ int verif(char *s, int l, int start)
  *@s: char to verify
  *
  *Return: 1  or 0.
-  -empty string is palindrome
  */
 
 int is_palindrome(char *s)
 {
-
-	return(verif(s, _strlen_recursion(s), 0));
-
+	return (verif(s, _strlen_recursion(s), 0));
 }
