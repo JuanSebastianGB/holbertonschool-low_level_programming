@@ -39,5 +39,5 @@ int main(int argc, char *argv[])
 	}
 
 	printf("%i\n", acum);
-	return (acum);
+	return (0);
 }
