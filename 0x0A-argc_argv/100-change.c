@@ -40,6 +40,11 @@ int main(int argc, char *argv[])
 	if (isnumber(argv[1]))
 	{
 		cents = atoi(argv[1]);
+		if (cents < 0)
+		{
+			puts("0");
+			return (-1);
+		}
 		for (i = 0; i < length; i++)
 		{
 			if (cents - coins[i] >= 0)
