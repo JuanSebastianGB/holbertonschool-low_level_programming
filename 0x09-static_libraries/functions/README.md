@@ -19,3 +19,4 @@
 - [5-strstr.c](5-strstr.c) - finds the first occurrence of the substring s2 in the string s1
 - [6-abs.c](6-abs.c) - find an always possitive number
 - [9-strcpy.c](9-strcpy.c) - copy content of one pointer to another
+- [_putchar.c](_putchar.c) - writes the character c to stdout
