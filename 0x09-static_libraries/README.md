@@ -18,7 +18,7 @@
 
 ### Sources
 
-- [Creating static library]()
+- [Creating static library](https://github.com/JuanSebastianGB/holbertonschool-low_level_programming/tree/main/0x09-static_libraries#build-library-creation-example)
 - [What Is A “C” Library? What Is It Good For?](https://docencia.ac.upc.edu/FIB/USO/Bibliografia/unix-c-libraries.html)
 - [Creating A Static “C” Library Using “ar” and “ranlib”](https://docencia.ac.upc.edu/FIB/USO/Bibliografia/unix-c-libraries.html)
 - [Using A “C” Library In A Program](https://docencia.ac.upc.edu/FIB/USO/Bibliografia/unix-c-libraries.html)
