@@ -1,3 +1,21 @@
 # Functions summary
 
 - [0-isupper.c](0-isupper.c) - Return 1 if char is upper letter, 0 if not.
+- [0-memset.c](0-memset.c) - fills the first n bytes of the memory area pointed to by s
+- [0-strcat.c](0-strcat.c) - append two strings
+- [1-isdigit.c](1-isdigit.c) - append two strings
+- [1-memcpy.c](1-memcpy.c) - function that copies memory area.
+- [1-strncat.c](1-strncat.c) - append two strings n bytes.
+- [100-atoi.c](100-atoi.c) - convert a string to an integer.
+- [2-strchr.c](2-strchr.c) - function that locates a character in a string.
+- [2-strlen.c](2-strlen.c) - Return string´s length
+- [2-strncpy.c](2-strncpy.c) - copy string form src to dest
+- [3-islower.c](3-islower.c) - function to identify if is lower case
+- [3-puts.c](3-puts.c) - Prints a string followed by a new line
+- [3-strcmp.c](3-strcmp.c) - compare two strings
+- [3-strspn.c](3-strspn.c) - gets the length of a prefix substring.
+- [4-isalpha.c](4-isalpha.c) - identify if is a letter, lowercase or uppercase
+- [4-strpbrk.c](4-strpbrk.c) - searches a string for any of a set of bytes.
+- [5-strstr.c](5-strstr.c) - finds the first occurrence of the substring s2 in the string s1
+- [6-abs.c](6-abs.c) - find an always possitive number
+- [9-strcpy.c](9-strcpy.c) - copy content of one pointer to another
