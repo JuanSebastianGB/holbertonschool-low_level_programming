@@ -3,25 +3,6 @@
 #include <ctype.h>
 
 /**
- *isnumber - define if an input is number or not
- *@input: char to verify
- *
- *Return: 1 if is number otherwise 0
- */
-
-int isnumber(char *input)
-{
-	int i;
-
-	for (i = 0; input[i]; i++)
-	{
-		if (!isdigit(input[i]))
-			return (0);
-	}
-	return (1);
-}
-
-/**
  *main - entry point
  *@argc: number of arguments called in compilation.
  *@argv: array that has the elements used to compile
@@ -37,14 +18,10 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	if (isnumber(argv[1]))
+
+	cents = atoi(argv[1]);
+	if (cents > 0) /*If is number and different of zero*/
 	{
-		cents = atoi(argv[1]);
-		if (cents < 0)
-		{
-			puts("0");
-			return (-1);
-		}
 		for (i = 0; i < length; i++)
 		{
 			if (cents - coins[i] >= 0)
@@ -55,6 +32,12 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
+	else
+	{
+		printf("0\n");
+		return(1);
+	}
+
 	printf("%i\n", acum);
 	return (acum);
 }
