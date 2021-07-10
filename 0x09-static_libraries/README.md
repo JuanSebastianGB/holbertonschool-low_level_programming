@@ -7,7 +7,7 @@
 
 ### Tasks
 
-- [libholberton.a, holberton.h](libholberton.a, holberton.h) - Create the static library libholberton.a
+- [libholberton.a](libholberton.a) - Create the static library libholberton.a
 - [create_static_lib.sh](create_static_lib.sh) - Create a script called create_static_lib.sh that creates a static library called liball.a from all the .c files that are in the current directory.
 - [Blog url]() - Write a blog post on C static libraries.
 
