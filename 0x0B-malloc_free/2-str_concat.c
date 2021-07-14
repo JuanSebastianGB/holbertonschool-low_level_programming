@@ -13,22 +13,22 @@
 char *str_concat(char *s1, char *s2)
 {
 
-	int size, size_s1, size_s2, i, j, k;
+	int i = 0, j = 0, size, l;
 	char *pointer;
 
-	size_s1 = sizeof(s1) - 1;
-	size_s2 = sizeof(s2) - 1;
-	size = size_s1 + size_s2 + 1;
-
-	pointer = malloc(size * sizeof(char));
-	if(!pointer)
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	size = i + j + 1;
+	pointer = malloc(sizeof(char) * size);
+	if (!pointer)
 		return (NULL);
-	for (i = 0; i < size_s1; i++)
-		pointer[i] = s1[i];
-	for (j = size_s1 - 1, k = 0; j < size ; j++, k++)
-	{
-		pointer[j] = s2[k];
-	}
+
+	for (l = 0 ; l < i; l++)
+		pointer[l] = s1[l];
+	for (m = 0; m < j; m++)
+		pointer[m + i] = s2[j];
 
 	return (pointer);
 }
