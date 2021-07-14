@@ -28,7 +28,8 @@ char *str_concat(char *s1, char *s2)
 	for (l = 0 ; l < i; l++)
 		pointer[l] = s1[l];
 	for (l = 0; l < j; l++)
-		pointer[l + i] = s2[j];
+		pointer[l + i] = s2[l];
+	pointer[size - 1] = '\0';
 
 	return (pointer);
 }
