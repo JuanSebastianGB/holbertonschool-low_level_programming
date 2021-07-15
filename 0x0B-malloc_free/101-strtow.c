@@ -14,11 +14,17 @@ int get_words(char *str)
 
 	for (i = 0; *(str + i); i++)
 	{
+
 		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1])
-		    size++;
+		{
+			size++;
+		}
 	}
+
 	if (str[0] != ' ' && str[0])
+	{
 		size++;
+	}
 
 	return (size);
 
