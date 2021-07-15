@@ -16,16 +16,16 @@ char *argstostr(int ac, char **av)
 	char *pointer;
 
 	/* validations */
-	if (ac <= 0 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 	/* finding size */
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 			size++;
-		size++;
+		size++; /* reserved for '\n' */
 	}
-	size = size + 1;
+	size = size + 1; /* reserved for all including '\0' */
 
 	pointer = malloc(sizeof(char) * size);
 	if (pointer == NULL)
