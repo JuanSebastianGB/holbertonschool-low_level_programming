@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * *malloc_checked - allocates memry, retunr 98 if fails
+ * @b: char that expects * size values
+ *
+ * Return: void pointer, and 98 in fail case
+ *
+ */
+
 void *malloc_checked(unsigned int b)
 {
 	void *pointer;
