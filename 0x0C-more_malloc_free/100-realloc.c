@@ -17,25 +17,25 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	unsigned int aux, i = 0;
 
 	aux = old_size;
+	if (new_size > aux)
+		aux = old_size;
 
 	if (!ptr)
 	{
 		pointer = malloc(new_size);
 		return (pointer);
 	}
-	else if (new_size == 0)
+	if (new_size == 0)
 	{
 		free(ptr);
 		return (NULL);
 	}
-	else if (new_size == old_size)
+	if (new_size == old_size)
 		return (ptr);
 	pointer = malloc(new_size);
 	if (!pointer)
 		return (NULL);
 
-	if (new_size > aux)
-		aux = old_size;
 
 	for (i = 0; i < aux; i++)
 		pointer[i] = bu[i];
