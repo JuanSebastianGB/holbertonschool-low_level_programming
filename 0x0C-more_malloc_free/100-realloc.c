@@ -35,6 +35,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	for (i = 0; i < aux; i++)
 		pointer[i] = bu[i];
+	free(ptr);
 
 	return (pointer);
 }
