@@ -34,19 +34,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n > j)
 		n = j;
-
-	pointer = malloc(sizeof * pointer * (i + n + 1));
-
+	pointer = malloc(sizeof(*pointer) * (i + n + 1));
 	if (!pointer)
 		return (NULL);
-
 	for (k = 0; k < (i + n); k++)
 	{
-
 		if (k < i)
 			pointer[k] = s1[k];
 		else
-
 			pointer[k] = s2[k - i];
 	}
 	pointer[k] = '\0';
