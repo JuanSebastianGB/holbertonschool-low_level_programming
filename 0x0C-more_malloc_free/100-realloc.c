@@ -16,11 +16,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *pointer, *bu = ptr;
 	unsigned int aux, i = 0;
 
-/*Comparing new with old pointers*/
-	/*If ptr null*/
 	aux = old_size;
-	if (new_size > aux)
-		aux = new_size;
+
 	if (!ptr)
 	{
 		pointer = malloc(new_size);
@@ -36,6 +33,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	pointer = malloc(new_size);
 	if (!pointer)
 		return (NULL);
+
+	if (new_size > aux)
+		aux = new_size;
 
 	for (i = 0; i < aux; i++)
 		pointer[i] = bu[i];
