@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		size_num2++;
 	/*Max result lenght = sum size num1 + size num2*/
 	pointer_l = size_num1 + size_num2;
-	printf("tamaño : %lu\n", sizeof(char) * (pointer_l + 1));
+
 	pointer = malloc(sizeof(char) * (pointer_l + 1));
 
 	if (pointer == NULL)
