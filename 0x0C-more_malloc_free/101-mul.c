@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	if (!pointer)
 	{
 		_puts("Error");
-		return (98);
+		exit(98);
 	}
 
 	for (i = size_num2 - 1, k = 0; i >= 0; i--, k++)
