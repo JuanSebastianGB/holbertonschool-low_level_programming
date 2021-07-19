@@ -150,7 +150,7 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 		result[bu - 1] = (rsum % 10) + '0';
 	}
 	cadd += cmul;
-	if (bu >= 0 && cadd)
+	for (;bu >= 0 && cadd; bu--)
 	{
 		rsum = (result[bu - 1] - '0') + cadd;
 		cadd = rsum / 10;
