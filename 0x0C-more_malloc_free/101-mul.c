@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
 		}
 	}
-
+/*	printf("%s\n", pointer);*/
 	print_without_left_cero(pointer, pointer_l);
 
 	return (0);
@@ -178,5 +178,5 @@ void print_without_left_cero(char *pointer, int length)
 			_putchar(pointer[i]);
 	}
 	_putchar('\n');
-	free(pointer);
+/*	free(pointer);*/
 }
