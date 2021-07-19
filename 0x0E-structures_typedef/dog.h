@@ -5,7 +5,7 @@
  * struct dog - Object of dogs
  * @name: name of the dog
  * @age: Age of the dog (still not specific if years or what)
- * @owner: Owner of the dog, this is also another object
+ * @owner: Owner of the dog.
  */
 
 struct dog
@@ -14,5 +14,7 @@ struct dog
 	float age;
 	char *owner;
 };
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
 
 #endif /* _DOG_H_ */
