@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 		size_num2++;
 	/*Max result lenght = sum size num1 + size num2*/
 	pointer_l = size_num1 + size_num2;
-	pointer = _calloc(pointer_l + 1, sizeof(*pointer));
+	pointer = _calloc(pointer_l + 1, sizeof(char));
 
-	if (!pointer)
+	if (pointer == NULL)
 	{
 		_puts(msj_error);
 		exit(98);
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	{
 		/* k = Effect to move 1 space th mul result to left*/
 		verify = _mul(num2[i], num1, size_num1, pointer, pointer_l - k);
-		if (!verify)
+		if (verify == NULL)
 		{
 			_puts(msj_error);
 			free(pointer);
@@ -116,7 +116,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (pointer == NULL)
 		return (NULL);
 	for (i = 0; i < (nmemb * size); i++)
-		pointer[i] = '\0';
+		pointer[i] = '0';
+	pointer[i] = '\0';
 
 	return (pointer);
 }
