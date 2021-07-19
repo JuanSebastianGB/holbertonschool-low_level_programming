@@ -7,6 +7,7 @@ void _puts(char *c);
 void setting_0(char *pointer, int length);
 char *_mul(char c, char *s, int length_s, char *result, int result_length);
 void print_without_left_cero(char *pointer, int length);
+char *remove_zero(char *pointer);
 
 /**
  * main - returns a print of the result
@@ -28,6 +29,8 @@ int main(int argc, char *argv[])
 		_puts(msj_error);
 		exit(98);
 	}
+	num1 = remove_zero(num1);
+	num2 = remove_zero(num2);
 
 	while (num1[size_num1])
 		size_num1++;
@@ -35,6 +38,7 @@ int main(int argc, char *argv[])
 		size_num2++;
 	/*Max result lenght = sum size num1 + size num2*/
 	pointer_l = size_num1 + size_num2;
+	printf("tamaño : %lu\n", sizeof(char) * (pointer_l + 1));
 	pointer = malloc(sizeof(char) * (pointer_l + 1));
 
 	if (pointer == NULL)
@@ -179,4 +183,27 @@ void print_without_left_cero(char *pointer, int length)
 	}
 	_putchar('\n');
 	free(pointer);
+}
+
+/**
+ * *remove_zero - removing zeros at left side of a char number
+ * @pointer: pointer to change
+ *
+ * Return: pointer changed
+ */
+
+char *remove_zero(char *pointer)
+{
+	int i = 0, j = 0, aux = 0;
+
+	for ( ; pointer[i]; i++)
+		;
+	for ( ; j < i; j++)
+	{
+		if (pointer[j] == '0')
+			aux++;
+		else
+			break;
+	}
+	return (pointer + aux);
 }
