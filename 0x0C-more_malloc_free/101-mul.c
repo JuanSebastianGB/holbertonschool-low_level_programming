@@ -4,7 +4,7 @@
 
 int _isdigit(char *c);
 void _puts(char *c);
-void *_calloc(unsigned int nmemb, unsigned int size);
+void setting_0(char *pointer, int length);
 char *_mul(char c, char *s, int length_s, char *result, int result_length);
 void print_without_left_cero(char *pointer, int length);
 
@@ -35,13 +35,14 @@ int main(int argc, char *argv[])
 		size_num2++;
 	/*Max result lenght = sum size num1 + size num2*/
 	pointer_l = size_num1 + size_num2;
-	pointer = _calloc(pointer_l + 1, sizeof(char));
+	pointer = malloc(sizeof(char) * pointer_l + 1);
 
 	if (pointer == NULL)
 	{
 		_puts(msj_error);
 		exit(98);
 	}
+	setting_0(pointer, pointer_l + 1);
 
 	for (i = size_num2 - 1, k = 0; i >= 0; i--, k++)
 	{
@@ -97,29 +98,21 @@ void _puts(char *c)
 }
 
 /**
- * *_calloc -  allocates memory for an array
- * @nmemb: number of array elements
- * @size: size
+ * setting_0 -  start the values of the array in '0'
+ * @pointer: pointer to start
+ * @length: size of pointer including '\0'
  *
  * Return: pointer
  *
  */
 
-void *_calloc(unsigned int nmemb, unsigned int size)
+void setting_0(char *pointer, int length)
 {
-	char *pointer;
-	unsigned int i;
-
-	if (nmemb < 1 || size < 1)
-		return (NULL);
-	pointer = malloc(nmemb * size);
-	if (pointer == NULL)
-		return (NULL);
-	for (i = 0; i < (nmemb * size); i++)
+	int i = 0;
+	for (; i < length; i++)
 		pointer[i] = '0';
 	pointer[i] = '\0';
 
-	return (pointer);
 }
 
 /**
