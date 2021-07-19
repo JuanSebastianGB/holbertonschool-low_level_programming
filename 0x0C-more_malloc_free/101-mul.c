@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		size_num2++;
 	/*Max result lenght = sum size num1 + size num2*/
 	pointer_l = size_num1 + size_num2;
-	pointer = malloc(sizeof(char) * pointer_l + 1);
+	pointer = malloc(sizeof(char) * (pointer_l + 1));
 
 	if (pointer == NULL)
 	{
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
 		}
 	}
-/*	printf("%s\n", pointer);*/
+
 	print_without_left_cero(pointer, pointer_l);
 
 	return (0);
@@ -151,10 +151,6 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 		result[bu - 1] = rsum % 10 + '0';
 	}
 
-	if (cadd)
-		return (NULL);
-
-
 	return (result);
 
 }
@@ -169,15 +165,18 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 
 void print_without_left_cero(char *pointer, int length)
 {
-	int i;
 
-	for (i = 0; i < length; i++)
+	int i = 0, aux = 0;
+
+	for ( ; i < length; i++)
 	{
-		if (i == 0 && (pointer[i] - '0') != 0)
+		if (pointer[i] != '0')
+		aux++;
+
+		if (aux > 0 || pointer[length - 1] - '0' != 0)
 			_putchar(pointer[i]);
-		else if (i > 0)
-			_putchar(pointer[i]);
+
 	}
 	_putchar('\n');
-/*	free(pointer);*/
+	free(pointer);
 }
