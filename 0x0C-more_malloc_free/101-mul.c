@@ -117,7 +117,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	for (i = 0; i < (nmemb * size); i++)
 		pointer[i] = '0';
-
+	pointer[i] = '\0';
 	return (pointer);
 }
 
@@ -181,7 +181,6 @@ void print_without_left_cero(char *pointer, int length)
 		else if (i > 0)
 			_putchar(pointer[i]);
 	}
-	pointer[i] = '\0';
 	_putchar('\n');
 	free(pointer);
 }
