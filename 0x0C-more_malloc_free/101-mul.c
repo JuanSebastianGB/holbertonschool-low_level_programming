@@ -156,8 +156,10 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 		cadd = rsum / 10;
 		result[bu - 1] = rsum % 10 + '0';
 	}
+	/*
 	if (cadd)
 		return (NULL);
+	*/
 
 	return (result);
 
@@ -183,5 +185,6 @@ void print_without_left_cero(char *pointer, int length)
 			_putchar(pointer[i]);
 	}
 	_putchar('\n');
+
 	free(pointer);
 }
