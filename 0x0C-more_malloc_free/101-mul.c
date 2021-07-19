@@ -17,7 +17,7 @@ void print_without_left_cero(char *pointer, int length);
 
 int main(int argc, char *argv[])
 {
-	char *num1, *num2, *pointer, *verify;
+	char *num1, *num2, *pointer, *verify, msj_error[] = "Error";
 	int size_num1 = 0, size_num2 = 0, i, k, pointer_l;
 
 	num1 = argv[1];
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3 || !_isdigit(num1) || !_isdigit(num2))
 	{
-		_puts("Error");
+		_puts(msj_error);
 		exit(98);
 	}
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
 	if (!pointer)
 	{
-		_puts("Error");
+		_puts(msj_error);
 		exit(98);
 	}
 
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 		verify = _mul(num2[i], num1, size_num1, pointer, pointer_l - k);
 		if (!verify)
 		{
-			_puts("Error");
+			_puts(msj_error);
 			free(pointer);
 			exit(98);
 
@@ -110,14 +110,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char *pointer;
 	unsigned int i;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb < 1 || size < 1)
 		return (NULL);
-	pointer = malloc((size_t)nmemb * size);
+	pointer = malloc(nmemb * size);
 	if (pointer == NULL)
 		return (NULL);
 	for (i = 0; i < (nmemb * size); i++)
-		pointer[i] = '0';
-	pointer[i] = '\0';
+		pointer[i] = '\0';
+
 	return (pointer);
 }
 
