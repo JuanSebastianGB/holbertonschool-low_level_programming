@@ -109,7 +109,8 @@ void _puts(char *c)
 void setting_0(char *pointer, int length)
 {
 	int i = 0;
-	for (; i < length; i++)
+
+	for ( ; i < length; i++)
 		pointer[i] = '0';
 	pointer[i] = '\0';
 
@@ -143,7 +144,7 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 		result[bu - 1] = (rsum % 10) + '0';
 	}
 	cadd += cmul;
-	for (;bu >= 0 && cadd; bu--)
+	for ( ; bu >= 0 && cadd; bu--)
 	{
 		rsum = (result[bu - 1] - '0') + cadd;
 		cadd = rsum / 10;
