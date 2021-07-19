@@ -6,6 +6,7 @@ int _isdigit(char *c);
 void _puts(char *c);
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_mul(char c, char *s, int length_s, char *result, int result_length);
+void print_without_left_cero(char *pointer, int length);
 
 /**
  * main - returns a print of the result
@@ -17,7 +18,7 @@ char *_mul(char c, char *s, int length_s, char *result, int result_length);
 int main(int argc, char *argv[])
 {
 	char *num1, *num2, *pointer, *verify;
-	int size_num1 = 0, size_num2 = 0, i, k, pointer_l, counter = 0;
+	int size_num1 = 0, size_num2 = 0, i, k, pointer_l;
 
 	num1 = argv[1];
 	num2 = argv[2];
@@ -54,12 +55,8 @@ int main(int argc, char *argv[])
 
 		}
 	}
-	while (counter < pointer_l)
-	{
-		_putchar(pointer[counter]);
-		counter++;
-	}
-	_putchar('\n');
+
+	print_without_left_cero(pointer, pointer_l);
 
 	return (0);
 }
@@ -124,6 +121,17 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	return (pointer);
 }
 
+/**
+ * _mul - multiply 2 numbers
+ * @c: actual char from the number 2 operation
+ * @n1: number 1 in string
+ * @length_number1: size of number 1
+ * @result: pointer where is stores the result
+ * @out_pos: actual start position from r to l to the sum logic
+ * Return: an string with the result stored
+ *
+ */
+
 char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 {
 	int last_number2, i, multi, cmul = 0, cadd = 0, rsum = 0, bu;
@@ -152,4 +160,28 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 
 	return (result);
 
+}
+
+/**
+ * print_without_left_cero - pint the mul result excluding left zero
+ * @pointer: pointer to print
+ * @length: size of created pointer output
+ * Return: print
+ *
+ */
+
+void print_without_left_cero(char *pointer, int length)
+{
+	int i;
+
+	for (i = 0; i < length; i++)
+	{
+		if (i == 0 && (pointer[i] - '0') != 0)
+			_putchar(pointer[i]);
+		else if (i > 0)
+			_putchar(pointer[i]);
+	}
+	pointer[i] = '\0';
+	_putchar('\n');
+	free(pointer);
 }
