@@ -29,7 +29,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(pointer);
 		return (NULL);
 	}
-	for (i = 0; name[i]; i++) /* Filling dog name */
+	for (i = 0; i < l_name + 1; i++) /* Filling dog name */
 		(*pointer).name[i] = name[i];
 	i = 0;
 	(*pointer).age = age; /* Filling dog age */
@@ -43,7 +43,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(pointer);
 		return (NULL);
 	}
-	for (i = 0; owner[i]; i++) /* Filling dog owner */
+	for (i = 0; i < l_owner + 1; i++) /* Filling dog owner */
 		(*pointer).owner[i] = owner[i];
 	return (pointer);
 }
