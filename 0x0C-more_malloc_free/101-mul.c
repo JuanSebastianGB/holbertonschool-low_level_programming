@@ -6,7 +6,6 @@ int _isdigit(char *c);
 void _puts(char *c);
 void setting_0(char *pointer, int length);
 char *_mul(char c, char *s, int length_s, char *result, int result_length);
-void print_without_left_cero(char *pointer, int length);
 char *remove_zero(char *pointer);
 
 /**
@@ -61,7 +60,9 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	print_without_left_cero(pointer, pointer_l);
+	/* print_without_left_cero(pointer, pointer_l);*/
+	printf("%s\n", remove_zero(pointer));
+	free(pointer);
 
 	return (0);
 }
@@ -114,7 +115,7 @@ void setting_0(char *pointer, int length)
 {
 	int i = 0;
 
-	for ( ; i < length; i++)
+	for ( ; i < length - 1; i++)
 		pointer[i] = '0';
 	pointer[i] = '\0';
 
@@ -148,41 +149,15 @@ char *_mul(char c, char *n1, int length_number1, char *result, int out_pos)
 		result[bu - 1] = (rsum % 10) + '0';
 	}
 	cadd += cmul;
-	for ( ; bu >= 0 && cadd; bu--)
+
+	if (cadd)
 	{
 		rsum = (result[bu - 1] - '0') + cadd;
-		cadd = rsum / 10;
 		result[bu - 1] = rsum % 10 + '0';
 	}
 
 	return (result);
 
-}
-
-/**
- * print_without_left_cero - pint the mul result excluding left zero
- * @pointer: pointer to print
- * @length: size of created pointer output
- * Return: print
- *
- */
-
-void print_without_left_cero(char *pointer, int length)
-{
-
-	int i = 0, aux = 0;
-
-	for ( ; i < length; i++)
-	{
-		if (pointer[i] != '0')
-		aux++;
-
-		if (aux > 0 || pointer[length - 1] - '0' != 0)
-			_putchar(pointer[i]);
-
-	}
-	_putchar('\n');
-	free(pointer);
 }
 
 /**
