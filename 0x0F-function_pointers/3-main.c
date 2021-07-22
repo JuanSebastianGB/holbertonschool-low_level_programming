@@ -1,4 +1,6 @@
 #include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Main function, the entry point
