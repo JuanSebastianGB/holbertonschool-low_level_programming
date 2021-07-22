@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	print_main((char *)&main, argc); /* Send address where main function start */
+	print_main((char *)&main, atoi(argv[1])); /* Send address where main function start */
 
 	return (0);
 }
