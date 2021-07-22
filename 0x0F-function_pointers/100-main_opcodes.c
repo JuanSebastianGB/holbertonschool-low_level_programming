@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void print_main(char *s, int n);
+
 /**
  * main - Call to itself to access inside information
  * @argc: number of elements
@@ -24,17 +26,29 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	f = main;
 
-	for ( ; i < atoi(argv[1]) - 1; i++)
-	{
-		 /* Running code block containing main*/
-		byte = *(unsigned char *)(f + i);
-		printf("%.2x", byte);
-		putchar(' ');
-	}
-
-	putchar('\n');
+	print_main((char *)&main, argc); /* Send address where main function start */
 
 	return (0);
+}
+
+/**
+ * print_main - print opcodes
+ * @s: adrress of main
+ * @n: number of bytes
+ * Return: Void - print
+ */
+
+void print_main(char *s, int n)
+{
+	int i = 0;
+
+	while (i < n)
+	{
+		printf("%.2hhx", *(s + i));
+		if (i < n - 1)
+			putchar(' ');
+		i++;
+	}
+	putchar('\n');
 }
