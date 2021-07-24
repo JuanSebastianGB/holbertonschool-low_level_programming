@@ -50,7 +50,7 @@ void print_string(va_list s)
 
 	if (word == NULL)
 	{
-		printf("(nil)");
+		word = "(nil)";
 	}
 	printf("%s", word);
 
