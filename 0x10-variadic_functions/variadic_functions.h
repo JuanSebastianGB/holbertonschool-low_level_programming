@@ -1,6 +1,15 @@
 #ifndef _VARIADIC_FUNCTIONS_H
 #define _VARIADIC_FUNCTIONS_H
 
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+/**
+ * struct impre - pirint deppending of char
+ * @t: char that say what is the type
+ * @f: pointer to function
+ */
+
 typedef struct impre
 {
 	char *t;
