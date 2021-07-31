@@ -2,21 +2,21 @@
 
 /**
  * list_len - prints the len of linked list
- * @h: pointer to the start of the list
+ * @h: pointer to the head node
  *
- * Return: Node numbers inside the list linked
+ * Return: Number of nodes
  */
 
 size_t list_len(const list_t *h)
 {
 	unsigned int i = 0;
-	const list_t *list;
+	const list_t *actual;
 
-		list = h;
+		actual = h;
 
-	while (list)
+	while (actual)
 	{
-		list = list->next;
+		actual = (*actual).next;
 		i++;
 	}
 	return (i);
