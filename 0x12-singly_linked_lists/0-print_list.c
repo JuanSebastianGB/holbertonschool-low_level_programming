@@ -2,22 +2,24 @@
 
 /**
  * print_list - prints all the elements inside the list
- * @h: pointer to the start of the list
+ * @h: pointer to the start (first node)
  *
- * Return: Node numbers inside the list
+ * Return: Node numbers
  */
 
 size_t print_list(const list_t *h)
 {
 	unsigned int i = 0;
-	const list_t *list;
+	const list_t *actual;
 
-		list = h;
+		actual = h;
 
-	while (list)
+	while (actual)
 	{
-		printf("[%u] %s\n", list->len, (list->str == NULL) ? "(nil)" : list->str);
-		list = list->next;
+		printf("[%u] %s\n", actual->len, (actual->str == NULL)
+		       ? "(nil)"
+		       : actual->str);
+		actual = actual->next;
 		i++;
 	}
 	return (i);
