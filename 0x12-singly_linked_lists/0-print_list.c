@@ -9,11 +9,11 @@
 
 size_t print_list(const list_t *h)
 {
-	int i = 0;
+	unsigned int i = 0;
 
 	while (h)
 	{
-		printf("[%i] %s\n", h->len, h->str);
+		printf("[%u] %s\n", h->len, h->str);
 		h = h->next;
 
 		i++;
