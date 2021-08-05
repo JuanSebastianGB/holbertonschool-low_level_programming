@@ -37,7 +37,7 @@ size_t free_listint_safe(listint_t **head)
 	}
 
 	head = NULL; /*Taking in consideration the tail*/
-	free(*head);
+
 	return (unique_nodes);
 
 }
