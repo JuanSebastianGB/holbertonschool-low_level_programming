@@ -14,7 +14,7 @@ size_t free_listint_safe(listint_t **head)
 	if (!head || !*head)
 		return (0);
 
-	if (unique_nodes)
+	if (unique_nodes != 0)
 	{
 		while (i < unique_nodes)
 		{
