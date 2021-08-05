@@ -30,7 +30,7 @@ size_t free_listint_safe(listint_t **head)
 			free(*head);
 			*head = actual;
 		}
-		*head = NULL;
+
 	}
 
 	head = NULL; /*Taking in consideration the tail*/
