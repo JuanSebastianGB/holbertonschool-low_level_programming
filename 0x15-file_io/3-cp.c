@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
 		free(buffer);
 		exit(99);
 	}
-	/*
-	destiny = open(argv[2], O_WRONLY | O_APPEND);
+
 	reading = read(origin, buffer, _bytes_selected);
-	*/
+	destiny = open(argv[2], O_WRONLY | O_APPEND);
+
 	free(buffer);
 	_close(origin, destiny);
 
