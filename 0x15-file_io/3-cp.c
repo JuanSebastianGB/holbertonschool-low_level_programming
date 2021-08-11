@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	reading = read(origin, buffer, _bytes_selected);
 	while (reading >= 1)
 	{
-		if (origin == -1 || destiny == -1)
+		if (origin == -1 || reading == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
