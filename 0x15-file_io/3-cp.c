@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 		}
 		reading = read(origin, buffer, _bytes_selected);
 		destiny = open(argv[2], O_WRONLY | O_APPEND);
-	} while(reading >= 1);
+	} while (reading >= 1);
 	free(buffer);
 	close_attempt(origin);
 	close_attempt(destiny);
