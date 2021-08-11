@@ -23,8 +23,7 @@ int main(int argc, char *argv[])
 	origin = open(argv[1], O_RDONLY);
 	destiny = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	reading = read(origin, buffer, _bytes_selected);
-	while (reading >= 1)
-	{
+	do {
 		if (origin == -1 || reading == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -42,8 +41,7 @@ int main(int argc, char *argv[])
 		}
 		reading = read(origin, buffer, _bytes_selected);
 		destiny = open(argv[2], O_WRONLY | O_APPEND);
-		reading = read(origin, buffer, _bytes_selected);
-	}
+	} while(reading >= 1);
 	free(buffer);
 	close_attempt(origin);
 	close_attempt(destiny);
