@@ -9,7 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-
 	char *buffer;
 	int _bytes_selected = 1024;
 	int origin, destiny, reading, writing;
@@ -22,7 +21,6 @@ int main(int argc, char *argv[])
 	}
 	buffer = _buffer(argv[2], _bytes_selected);
 	origin = open(argv[1], O_RDONLY);
-	/* rw-rw-r-- 664 */
 	destiny = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	reading = read(origin, buffer, _bytes_selected);
 	while (reading >= 1)
@@ -47,7 +45,8 @@ int main(int argc, char *argv[])
 		reading = read(origin, buffer, _bytes_selected);
 	}
 	free(buffer);
-	_close(origin, destiny);
+	close_attempt(origin);
+	close_attempt(destiny);
 	return (0);
 }
 
@@ -72,27 +71,19 @@ char *_buffer(char *file, int bytes_selected)
 	return (buffer);
 }
 /**
- * _close - Closing files origin and destiny
- * @origin: Origin file
- * @destiny: Destiny file
+ * close_attempt - Closing files origin and destiny
+ * @file_descriptor: file descriptor trying to close
  * Return: Nothing - void
  */
-void _close(int origin, int destiny)
+void close_attempt(int file_descriptor)
 {
-	int i, j;
+	int i;
 
-	i = close(origin);
+	i = close(file_descriptor);
 	if (i == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %i\n", origin);
-		exit(100);
-	}
-	j = close(destiny);
-	if (j == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %i\n", destiny);
+			"Error: Can't close fd %i\n", file_descriptor);
 		exit(100);
 	}
 }
