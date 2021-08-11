@@ -25,30 +25,30 @@ int main(int argc, char *argv[])
 	/* rw-rw-r-- 664 */
 	destiny = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	reading = read(origin, buffer, _bytes_selected);
-	if (origin == -1 || destiny == -1)
+	while (reading >= 1)
 	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't read from file %s\n", argv[1]);
-		free(buffer);
-		exit(98);
+		if (origin == -1 || destiny == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
+		writing = write(destiny, buffer, reading);
+		if (destiny == -1 || writing == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
+			free(buffer);
+			exit(99);
+		}
+		reading = read(origin, buffer, _bytes_selected);
+		destiny = open(argv[2], O_WRONLY | O_APPEND);
+		reading = read(origin, buffer, _bytes_selected);
 	}
-	writing = write(destiny, buffer, reading);
-	if (destiny == -1 || writing == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", argv[2]);
-		free(buffer);
-		exit(99);
-	}
-
-	reading = read(origin, buffer, _bytes_selected);
-	destiny = open(argv[2], O_WRONLY | O_APPEND);
-
 	free(buffer);
 	_close(origin, destiny);
-
 	return (0);
-
 }
 
 /**
