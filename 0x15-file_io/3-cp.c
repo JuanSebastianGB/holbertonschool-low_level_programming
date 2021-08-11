@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
 	char *buffer;
 	int _bytes_selected = 1024;
-	ssize_t origin, destiny, reading, writing;
+	int origin, destiny, reading, writing;
 
 	if (argc != 3)
 	{
@@ -77,22 +77,22 @@ char *_buffer(char *file, int bytes_selected)
  * @destiny: Destiny file
  * Return: Nothing - void
  */
-void _close(ssize_t origin, ssize_t destiny)
+void _close(int origin, int destiny)
 {
-	ssize_t i, j;
+	int i, j;
 
 	i = close(origin);
 	if (i == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %zd\n", origin);
+			"Error: Can't close fd %i\n", origin);
 		exit(100);
 	}
 	j = close(destiny);
 	if (j == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %zd\n", destiny);
+			"Error: Can't close fd %i\n", destiny);
 		exit(100);
 	}
 }
