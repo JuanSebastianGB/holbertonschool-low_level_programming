@@ -26,7 +26,7 @@ my_pid = getpid();
 printf("%u\n", my_pid);
 return (0);
 }
-julien@ubuntu:~/c/shell$ gcc -Wall -Werror -pedantic [pid.c](pid.c) -o mypid && ./mypid
+julien@ubuntu:~/c/shell$ gcc -Wall -Werror -pedantic pid.c -o mypid && ./mypid
 3237
 julien@ubuntu:~/c/shell$ ./mypid
 3238
