@@ -15,5 +15,6 @@
 #define UNUSED(x) (void)(x)
 
 int _strlen(char *str);
+void printTokens(char *tokens);
 
 #endif /* _SHELL_H_ */
