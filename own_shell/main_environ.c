@@ -30,5 +30,11 @@ int main(int argc, char **av __attribute__((unused)), char **env)
 		printf("%s\n", environ[i]);
 		i++;
 	}
+
+	/* using getenv()*/
+
+	printf("\n Enviroment content of PATH using getenv PATH=%s \n",
+	       getenv("PATH"));
+
 	return (0);
 }
