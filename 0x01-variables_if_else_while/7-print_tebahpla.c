@@ -11,16 +11,16 @@
 
 int main(void)
 {
-char aux = 'z';
+    char aux = 'z';
 
-while (aux >= 'a')
-{
-putchar(aux);
-if (aux == 'a')
-{
-putchar('\n');
-}
-aux--;
-}
-return (0);
+    while (aux >= 'a')
+    {
+        putchar(aux);
+        if (aux == 'a')
+        {
+            putchar('\n');
+        }
+        aux--;
+    }
+    return (0);
 }

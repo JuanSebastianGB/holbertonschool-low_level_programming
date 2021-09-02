@@ -12,19 +12,19 @@
 int main(void)
 {
 
-int aux2;
+    int aux2;
 
-for (aux2 = 48; aux2 <= 57; aux2++)
-{
-putchar(aux2);
-if (aux2 != 57)
-{
+    for (aux2 = 48; aux2 <= 57; aux2++)
+    {
+        putchar(aux2);
+        if (aux2 != 57)
+        {
 
-putchar(44);
-putchar(32);
-}
-}
+            putchar(44);
+            putchar(32);
+        }
+    }
 
-putchar(10);
-return (0);
+    putchar(10);
+    return (0);
 }

@@ -11,17 +11,17 @@
 
 int main(void)
 {
-char i;
-for (i = 'a'; i <= 'z'; i++)
-{
-if (i != 'q' && i != 'e')
-{
-putchar(i);
-}
-if (i == 'z')
-{
-putchar('\n');
-}
-}
-return (0);
+    char i;
+    for (i = 'a'; i <= 'z'; i++)
+    {
+        if (i != 'q' && i != 'e')
+        {
+            putchar(i);
+        }
+        if (i == 'z')
+        {
+            putchar('\n');
+        }
+    }
+    return (0);
 }
