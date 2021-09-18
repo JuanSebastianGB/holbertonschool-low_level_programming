@@ -36,8 +36,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (new == NULL || *h == NULL)
 		return (NULL);
 	new->n = n;
-	if (idx < 0)
-		return (NULL);
 	while (copy != NULL)
 	{
 		if (idx == 0)
