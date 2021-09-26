@@ -453,9 +453,6 @@ julien@ubuntu:~/0x12. Singly linked lists$
 
 ### 5. The Hare and the Tortoise
 
-#advanced
-
-Score:  100.00%  (Checks completed: 100.00%)
 
 ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/de3291ccf5b255fff6ce37bfde7a13f481e7ed0c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210926%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210926T041217Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=884507baf41f6ac48ad3c56db9d3cbf3e5ed42998cd5665c398847cde020d4e5)
 
