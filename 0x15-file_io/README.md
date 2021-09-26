@@ -331,7 +331,4 @@ julien@ubuntu:~/0x15. File descriptors and permissions$
 -   Directory:  `0x15-file_io`
 -   File:  `3-cp.c`
 
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
+Copyright © 2021 Holberton Inc, All rights reserved.
