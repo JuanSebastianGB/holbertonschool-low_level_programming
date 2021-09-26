@@ -317,10 +317,6 @@ julien@ubuntu:~/0x08. Recursion$
 
 ### 6. Inception. Is it possible?
 
-mandatory
-
-Score:  100.00%  (Checks completed: 100.00%)
-
 Write a function that returns  `1`  if the input integer is a  [prime number](https://intranet.hbtn.io/rltoken/uMon4hPzNyQ_WSgpnTlShw "prime number"), otherwise return  `0`.
 
 -   Prototype:  `int is_prime_number(int n);`
