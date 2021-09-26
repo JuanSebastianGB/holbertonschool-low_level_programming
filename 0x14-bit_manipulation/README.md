@@ -421,4 +421,6 @@ Please, remember that these blogs must be written in English to further your tec
 #### Add URLs here:
 
 -   [https://www.linkedin.com/pulse/how-integers-stored-memory-using-twos-complement-gonzalez](https://www.linkedin.com/pulse/how-integers-stored-memory-using-twos-complement-gonzalez)
--   
+
+Copyright © 2021 Holberton Inc, All rights reserved.   
+
