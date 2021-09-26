@@ -56,10 +56,6 @@ typedef struct dlistint_s
 
 ```
 
-## Quiz questions
-
-Show
-
 ## Tasks
 
 ### 0. Print list
