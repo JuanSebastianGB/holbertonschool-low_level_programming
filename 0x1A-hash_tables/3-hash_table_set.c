@@ -10,7 +10,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 
-	int index = 0;
+	int index = 0, i = 0;
 	hash_node_t *node = NULL;
 	char *dup_value = NULL;
 
@@ -20,15 +20,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	dup_value = strdup(value);
 	if (dup_value == NULL)
 		return (0);
-	while (ht->array[index] != NULL) /* Has already a node check if repeated*/
+	i = index;
+	while (ht->array[i] != NULL) /* Has already a node check if repeated*/
 	{
-		if (strcmp(ht->array[index]->key, key) == 0)
+		if (strcmp(ht->array[i]->key, key) == 0)
 		{
 			free(ht->array[index]->value);
 			ht->array[index]->value = dup_value; /* Changing value*/
 			return (1);
 		}
-		ht->array[index] = ht->array[index]->next;
+		i++;
 	}
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
