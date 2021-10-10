@@ -126,7 +126,7 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *runer = NULL;
 	int aux = 0;
 
-	if (ht == NULL)
+	if (ht == NULL || ht->array == NULL)
 		return;
 	runer = ht->shead;
 	putchar('{');
@@ -151,7 +151,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	shash_node_t *runer = NULL;
 	int aux = 0;
 
-	if (ht == NULL)
+	if (ht == NULL || ht->array == NULL)
 		return;
 	runer = ht->stail;
 	putchar('{');
@@ -176,6 +176,8 @@ void shash_table_delete(shash_table_t *ht)
 	int i;
 	shash_node_t *temp_node = NULL, *next;
 
+	if (ht == NULL || ht->array == NULL || ht->size == 0)
+		return;
 	for (i = 0; i < (int)ht->size; i++)
 	{
 		temp_node = ht->array[i];
@@ -194,4 +196,26 @@ void shash_table_delete(shash_table_t *ht)
 	ht->array = NULL;
 	ht->size = 0;
 	free(ht);
+}
+
+/**
+ * shash_table_get - retrieves a value associated with a key.
+ * @ht: Hash table
+ * @key: Key to looking for
+ * Return: Key if found otherwise NULL
+ */
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	int index;
+
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (NULL);
+	index = key_index((const unsigned char *)key, ht->size);
+	if (index >= (int)ht->size || ht->array[index] == NULL)
+		return (NULL);
+	if (ht->array[index] != NULL && strcmp(ht->array[index]->key, key) != 0)
+		ht->array[index] = ht->array[index]->next;
+	return ((ht->array[index]->value != NULL)
+				? ht->array[index]->value
+				: NULL);
 }
