@@ -110,7 +110,6 @@ void set_sorted_list(shash_table_t *ht, shash_node_t *node)
 		runer = runer->snext;
 	}
 	/* Not match found, then node becomes the biggest one (link with tail)*/
-	node->snext = ht->stail->next;
 	node->sprev = ht->stail;
 	ht->stail->snext = node;
 	ht->stail = node;
