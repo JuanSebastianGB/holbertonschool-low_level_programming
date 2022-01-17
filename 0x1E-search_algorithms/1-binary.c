@@ -14,7 +14,7 @@ void print_pointer(int *array, int size)
 	printf("Searching in array:");
 	for (i = 0; i < size; i++)
 	{
-		printf(" %i", array[i]);
+		printf(" %d", array[i]);
 		if (i != size - 1)
 			printf(",");
 	}
