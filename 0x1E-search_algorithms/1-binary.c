@@ -4,21 +4,18 @@
  * print_pointer - Function to print an array
  *
  * @array: Array to print
- * @size: Size of the array
+ * @start: Left index of array
+ * @end: Right index of array
  * Return: Nothing
  */
-void print_pointer(int *array, int size)
+void print_pointer(int *array, int start, int end)
 {
 	int i;
 
 	printf("Searching in array:");
-	for (i = 0; i < size; i++)
-	{
-		printf(" %d", array[i]);
-		if (i != size - 1)
-			printf(",");
-	}
-	printf("\n");
+	for (i = start; i < end; i++)
+		printf(" %d,", array[i]);
+	printf(" %i\n", array[i]);
 }
 
 /**
@@ -40,18 +37,16 @@ int binary_search(int *array, size_t size, int value)
 	start = 0;
 	end = size - 1;
 
-	print_pointer(array + start, end - start + 1);
-
-	for (; start < end;)
+	for (; start <= end;)
 	{
-		middle = start + (end - start) / 2;
+		print_pointer(array, start, end);
+		middle = (start + end) / 2;
 		if (array[middle] == value)
 			return (middle);
 		else if (array[middle] < value)
 			start = middle + 1;
 		else
 			end = middle - 1;
-		print_pointer(array + start, end - start + 1);
 	}
 
 	return (-1);
